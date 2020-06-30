@@ -30,7 +30,6 @@ use cocoa::base::{id, nil, BOOL, NO, YES};
 use cocoa::foundation::{
     NSAutoreleasePool, NSInteger, NSPoint, NSRect, NSSize, NSString, NSUInteger,
 };
-use core_graphics::context::CGContextRef;
 use foreign_types::ForeignTypeRef;
 use lazy_static::lazy_static;
 use log::{error, info};
@@ -639,11 +638,9 @@ extern "C" fn view_will_draw(this: &mut Object, _: Sel) {
 extern "C" fn draw_rect(this: &mut Object, _: Sel, dirtyRect: NSRect) {
     unsafe {
         let context: id = msg_send![class![NSGraphicsContext], currentContext];
-        //FIXME: when core_graphics is at 0.20, we should be able to use
-        //core_graphics::sys::CGContextRef as our pointer type.
-        let cgcontext_ptr: *mut <CGContextRef as ForeignTypeRef>::CType =
-            msg_send![context, CGContext];
-        let cgcontext_ref = CGContextRef::from_ptr_mut(cgcontext_ptr);
+        let cgcontext_ptr: *mut _ = msg_send![context, CGContext];
+        // type inference knows we want this to be a CGContextRef
+        let cgcontext_ref = ForeignTypeRef::from_ptr_mut(cgcontext_ptr);
 
         // FIXME: use the actual invalid region instead of just this bounding box.
         // https://developer.apple.com/documentation/appkit/nsview/1483772-getrectsbeingdrawn?language=objc
