@@ -14,6 +14,7 @@
 
 //! Text editing utilities.
 
+mod attribute;
 pub mod backspace;
 mod editable_text;
 mod font_descriptor;

@@ -22,7 +22,6 @@ use crate::piet::{
     TextLayoutBuilder as _,
 };
 use crate::{ArcStr, Data, Env, FontDescriptor, KeyOrValue, PaintCtx, RenderContext};
-
 /// A component for displaying text on screen.
 ///
 /// This is a type intended to be used by other widgets that display text.
@@ -54,6 +53,7 @@ pub struct TextLayout {
     cached_text_size: Option<f64>,
     // the underlying layout object. This is constructed lazily.
     layout: Option<PietTextLayout>,
+    attributes: Vec<()>,
 }
 
 impl TextLayout {
@@ -73,6 +73,7 @@ impl TextLayout {
             text_size_override: None,
             cached_text_size: None,
             layout: None,
+            attributes: Vec::new(),
         }
     }
 
