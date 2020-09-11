@@ -58,6 +58,10 @@ pub const WIDGET_PADDING_HORIZONTAL: Key<f64> =
 /// The default vertical spacing between widgets.
 pub const WIDGET_PADDING_VERTICAL: Key<f64> =
     Key::new("org.linebender.druid.theme.widget-padding-v");
+/// The default internal (horizontal) padding for visually distinct components
+/// of a widget; for instance between a checkbox and its label.
+pub const WIDGET_CONTROL_COMPONENT_PADDING: Key<f64> =
+    Key::new("org.linebender.druid.theme.widget-padding-control-label");
 
 pub const TEXTBOX_BORDER_RADIUS: Key<f64> = Key::new("textbox_radius");
 
@@ -108,6 +112,7 @@ pub fn init() -> Env {
         .adding(SCROLLBAR_EDGE_WIDTH, 1.)
         .adding(WIDGET_PADDING_VERTICAL, 10.0)
         .adding(WIDGET_PADDING_HORIZONTAL, 8.0)
+        .adding(WIDGET_CONTROL_COMPONENT_PADDING, 4.0)
         .adding(
             UI_FONT,
             FontDescriptor::new(FontFamily::SYSTEM_UI).with_size(15.0),
