@@ -52,6 +52,13 @@ pub const UI_FONT: Key<FontDescriptor> = Key::new("druid.builtin.ui-font-descrip
 pub const WIDE_WIDGET_WIDTH: Key<f64> = Key::new("druid.widgets.long-widget-width");
 pub const BORDERED_WIDGET_HEIGHT: Key<f64> = Key::new("bordered_widget_height");
 
+/// The default horizontal spacing between widgets.
+pub const WIDGET_PADDING_HORIZONTAL: Key<f64> =
+    Key::new("org.linebender.druid.theme.widget-padding-h");
+/// The default vertical spacing between widgets.
+pub const WIDGET_PADDING_VERTICAL: Key<f64> =
+    Key::new("org.linebender.druid.theme.widget-padding-v");
+
 pub const TEXTBOX_BORDER_RADIUS: Key<f64> = Key::new("textbox_radius");
 
 pub const SCROLLBAR_COLOR: Key<Color> = Key::new("scrollbar_color");
@@ -99,6 +106,8 @@ pub fn init() -> Env {
         .adding(SCROLLBAR_PAD, 2.)
         .adding(SCROLLBAR_RADIUS, 5.)
         .adding(SCROLLBAR_EDGE_WIDTH, 1.)
+        .adding(WIDGET_PADDING_VERTICAL, 10.0)
+        .adding(WIDGET_PADDING_HORIZONTAL, 8.0)
         .adding(
             UI_FONT,
             FontDescriptor::new(FontFamily::SYSTEM_UI).with_size(15.0),

@@ -34,6 +34,7 @@ You can find its changes [documented below](#060---2020-06-01).
 - `TextLayout` type simplifies drawing text ([#1182] by [@cmyr])
 - Implementation of `Data` trait for `i128` and `u128` primitive data types. ([#1214] by [@koutoftimer])
 - `LineBreaking` enum allows configuration of label line-breaking ([#1195] by [@cmyr])
+- WIDGET_PADDING items added to theme and `Flex::with_default_spacer`/`Flex::add_default_spacer` ([#1220] by [@cmyr])
 
 ### Changed
 
@@ -443,6 +444,7 @@ Last release without a changelog :(
 [#1204]: https://github.com/linebender/druid/pull/1204
 [#1205]: https://github.com/linebender/druid/pull/1205
 [#1214]: https://github.com/linebender/druid/pull/1214
+[#1220]: https://github.com/linebender/druid/pull/1220
 
 [Unreleased]: https://github.com/linebender/druid/compare/v0.6.0...master
 [0.6.0]: https://github.com/linebender/druid/compare/v0.5.0...v0.6.0
