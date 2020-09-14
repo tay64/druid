@@ -27,7 +27,7 @@ use wasm_bindgen::JsCast;
 
 use crate::kurbo::{Point, Rect, Size, Vec2};
 
-use crate::piet::{RenderContext, PietText};
+use crate::piet::{PietText, RenderContext};
 
 use super::application::Application;
 use super::error::Error;
@@ -41,8 +41,8 @@ use crate::scale::{Scale, ScaledArea};
 use crate::keyboard::{KbKey, KeyState, Modifiers};
 use crate::mouse::{Cursor, MouseButton, MouseButtons, MouseEvent};
 use crate::region::Region;
-use crate::window::{IdleToken, TimerToken, WinHandler};
 use crate::window;
+use crate::window::{IdleToken, TimerToken, WinHandler};
 
 // This is a macro instead of a function since KeyboardEvent and MouseEvent has identical functions
 // to query modifier key states.

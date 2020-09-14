@@ -45,14 +45,13 @@ use crate::mouse::{Cursor, MouseButton, MouseButtons, MouseEvent};
 use crate::piet::{Piet, PietText, RenderContext};
 use crate::region::Region;
 use crate::scale::Scale;
-use crate::window::{IdleToken, TimerToken, WinHandler};
 use crate::window;
+use crate::window::{IdleToken, TimerToken, WinHandler};
 
 use super::application::Application;
 use super::keycodes;
 use super::menu::Menu;
 use super::util::{self, Timer};
-
 
 /// A version of XCB's `xcb_visualtype_t` struct. This was copied from the [example] in x11rb; it
 /// is used to interoperate with cairo.
